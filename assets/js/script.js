@@ -171,7 +171,7 @@ class Star{
             { top: "-10px" }
         ];
         const aliceTiming = {
-            duration: 10000,
+            duration: this.getRandomInt(3000,14000),
             iterations: 1,
         };
         const animation = document.getElementById(this._builtId).animate(aliceTumbling, aliceTiming);
