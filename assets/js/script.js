@@ -187,7 +187,7 @@ class Star{
 }
 
 class StarController{
-    _maxStars = 70;
+    _maxStars = 100;
     _stars = [];
     _timeInterval = {
         min:200,
