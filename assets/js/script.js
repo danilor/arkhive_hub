@@ -146,10 +146,15 @@ class Ball{
         this.animate();
     }
 
+    getScreenSize(){
+        return {
+            height: window.innerHeight,
+            width: window.innerWidth
+        };
+    }
+
     getStyles(){
-        const h = window.innerHeight;
-        const w = window.innerWidth;
-        return `border-radius: 50%; width: ${this._size}px; height: ${this._size}px; background-color: ${this._color}; position: fixed; z-index: -1; top: ${h}px; left: ${this.getRandomInt(10,w-10)}px;`;
+        return `border-radius: 50%; width: ${this._size}px; height: ${this._size}px; background-color: ${this._color}; position: fixed; z-index: -1; top: ${this.getScreenSize().height}px; left: ${this.getRandomInt(10,this.getScreenSize().width-10)}px;`;
     }
 
     getRandomInt(min, max) {
