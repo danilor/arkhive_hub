@@ -131,7 +131,7 @@ const tags = [
 
 ];
 
-class Star{
+class Ball{
     _size = 0;
     _id = 0;
     _builtId = '';
@@ -142,8 +142,8 @@ class Star{
         this._id = this.getRandomInt(10000,99000);
         this._builtId = `star-${this._id}`;
         this._size = this.getRandomInt(4,9);
-        this.printStar();
-        this.animateStar();
+        this.print();
+        this.animate();
     }
 
     getStyles(){
@@ -158,7 +158,7 @@ class Star{
         return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); // The maximum is exclusive and the minimum is inclusive
     }
 
-    printStar(){
+    print(){
         const div = document.createElement('div');
         div.setAttribute('id', this._builtId );
         div.setAttribute('style', this.getStyles());
@@ -166,15 +166,15 @@ class Star{
         document.querySelector('body').appendChild(div);
     }
 
-    animateStar(){
-        const aliceTumbling = [
+    animate(){
+        const target = [
             { top: "-10px" }
         ];
-        const aliceTiming = {
+        const timing = {
             duration: this.getRandomInt(3000,14000),
             iterations: 1,
         };
-        const animation = document.getElementById(this._builtId).animate(aliceTumbling, aliceTiming);
+        const animation = document.getElementById(this._builtId).animate(target, timing);
         animation.onfinish = () => {
             document.getElementById(this._builtId).remove();
             this._completed = true;
@@ -186,9 +186,9 @@ class Star{
     }
 }
 
-class StarController{
-    _maxStars = 100;
-    _stars = [];
+class BallsController{
+    _maxElements = 100;
+    _elements = [];
     _timeInterval = {
         min:10,
         max: 1000
@@ -199,21 +199,21 @@ class StarController{
 
     execute(){
         setTimeout(()=>{
-            this.removeUnusedStars();
-            if(this._stars.length < this._maxStars){
-                this._stars.push(new Star());
+            this.removeUnusedElements();
+            if(this._elements.length < this._maxElements){
+                this._elements.push(new Ball());
             }
             this.execute();
         }, this.getRandomInt(this._timeInterval.min,this._timeInterval.max));
     }
 
-    removeUnusedStars(){
-        for(let i = 0; i < this._stars.length; i++){
-            if(this._stars[i].isCompleted()){
-                delete this._stars[i];
+    removeUnusedElements(){
+        for(let i = 0; i < this._elements.length; i++){
+            if(this._elements[i].isCompleted()){
+                delete this._elements[i];
             }
         }
-        this._stars = this._stars.filter((star)=> star !== undefined);
+        this._elements = this._elements.filter((star)=> star !== undefined);
     }
 
     getRandomInt(min, max) {
@@ -283,6 +283,6 @@ $(window).ready(()=>{
     AOS.init({
         offset: 60
     });
-    const starController = new StarController();
+    const starController = new BallsController();
     starController.execute();
 });
