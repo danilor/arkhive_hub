@@ -22,9 +22,14 @@ const links = [
                 url: 'https://www.facebook.com/thearkhive'
             },
             {
-                title: 'Instagram',
-                icon: 'zi-instagram2',
+                title: 'The Arkhive',
+                icon: 'zi-instagram',
                 url: 'https://www.instagram.com/daniloramirezcr_thearkhive/'
+            },
+            {
+                title: 'The Schrodinger Meeple',
+                icon: 'zi-instagram',
+                url: 'https://www.instagram.com/the.schrodinger.meeple/'
             },
             {
                 title: 'Twitter',
@@ -47,20 +52,25 @@ const links = [
                 url: 'https://github.com/danilor'
             },
             {
-                title: 'Replit',
-                icon: 'zi-code',
-                url: 'https://replit.com/@arkofdan'
-            },
-            {
-                title: 'Fiddle',
-                icon: 'zi-code',
-                url: 'https://jsfiddle.net/user/daniloramirezcr/fiddles/'
-            },
-            {
                 title: 'Play Store The Arkhive',
                 icon: 'zi-android',
                 url: 'https://play.google.com/store/apps/developer?id=The+Arkhive'
             },
+            {
+                title: 'ZenIcons',
+                icon: 'zi-html-five',
+                url: 'https://danilor.github.io/ZenIcons/'
+            },
+            {
+                title: 'ZenUI',
+                icon: 'zi-html-five',
+                url: 'https://danilor.github.io/zenui-docs/'
+            },
+            {
+                title: 'docunatorjs',
+                icon: 'zi-html-five',
+                url: 'https://www.npmjs.com/package/docunatorjs'
+            }
 
         ]
     },
@@ -94,7 +104,7 @@ const links = [
             },
             {
                 title: 'Steam',
-                icon: 'zi-steam-square',
+                icon: 'zi-steam',
                 url: 'https://steamcommunity.com/id/arkofdan'
             },
             {
